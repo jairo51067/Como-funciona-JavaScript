@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Favicon -->
+   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+   <!-- Bootstrap 5 -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- CSS normalize -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+   <title>Consola JavaScript</title>
+</head>
+
+<body class="container">
+   <!-- LA CONSOLA JAVASCRIPT -->   
+   <div class="card shadow-sm mb-4">
+      <div class="card-body">
+
+         <h1 class="display-5 fw-bold">La consola Javascript</h1>
+         <p class="text-muted fw-bold">Consejos útiles para mostrar información en la consola</p>
+
+         <p class="lead">
+            La consola Javascript es una zona del navegador ubicada en las <strong>DevTools</strong> donde podemos
+            escribir
+            pequeños fragmentos de código y observar los resultados, así como revisar mensajes de información,
+            error u otros detalles similares.
+
+            Para acceder a las DevTools podemos pulsar el atajo de teclado <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+            <kbd>J</kbd> sobre la pestaña de la página web en
+            cuestión. Esta zona es un panel de control general donde podemos ver varios aspectos del desarrollo de
+            la página en la que nos encontramos: su etiquetado HTML, sus estilos CSS, etc... Sin embargo, pulsando
+            el atajo de teclado <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> nos llevará directamente a la
+            consola.
+         </p>
+
+         <div class="card border-0 shadow-sm rounded-3 p-4 text-center">
+            <div>
+               <a href="https://lenguajejs.com/javascript/introduccion/que-es-javascript/"
+                  class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">
+                  "Ir a la Referencia"
+               </a>
+            </div>
+            <p class="text-muted mt-3 mb-0 fw-bold">
+               Para ir a ver los ejemplos en la consola usa: <br>
+               <span class="d-inline-flex align-items-center gap-1">
+                  <kbd class="bg-light text-dark border">Ctrl</kbd> +
+                  <kbd class="bg-light text-dark border">Shift</kbd> +
+                  <kbd class="bg-light text-dark border">J</kbd>
+               </span>
+            </p>
+         </div>
+
+         <hr>
+
+         <p class="lead">
+            El método <code>console.log()</code> es el método más utilizado para mostrar información en la consola.
+            Este método recibe un argumento, que es el valor que queremos mostrar. Por ejemplo:
+         </p>
+         <pre><code>console.log("Hola, soy un mensaje en la consola");</code></pre>
+
+         <hr>
+         <!-- Mensajes de error por niveles -->
+         <p class="text-muted fw-bold">Mensajes de error por niveles</p>
+         <p class="lead">
+            Además de <code>console.log()</code>, existen otros métodos para mostrar mensajes en la consola, cada uno
+            con un nivel de importancia diferente. Por ejemplo:
+         </p>
+         <pre><code>console.debug("Muestra información con todo nivel de detalle.");</code></pre>
+         <pre><code>console.info("Muestra mensajes de información.");</code></pre>
+         <pre><code>console.warn("Muestra información de advertencia. Aparece destacado en amarillo.");</code></pre>
+         <pre><code>console.error("Muestra información de error. Aparece destacado en rojo.");</code></pre>
+
+         <hr>
+         <!-- Mostrar una traza de error -->
+         <p class="text-muted fw-bold">Mostrar una traza de error</p>
+         <p class="lead">
+            El método <code>console.trace()</code> muestra una traza de error en la consola, lo que nos permite
+            ver el camino que ha seguido el programa hasta llegar a ese punto. Esto es especialmente útil para
+            depurar errores y entender el flujo de ejecución de nuestro código.
+         </p>
+         <pre><code>console.trace("Esto es una traza de error");</code></pre>
+
+
+         <hr>
+         <!-- Truco: Mensajes con estilos CSS -->
+         <p class="text-muted fw-bold">Truco: Mensajes con estilos CSS</p>
+         <p class="lead">
+            El método <code>console.log()</code> también permite mostrar mensajes con estilos CSS personalizados. Para
+            ello, podemos utilizar el siguiente formato:
+         </p>
+         <pre><code>console.log("%cEste mensaje tiene estilos CSS personalizados", "color: red; font-size: 20px; font-weight: bold;");</code></pre>
+         <p class="text-muted fw-bold">En este ejemplo, el mensaje se mostrará en rojo, con un tamaño de fuente de 20
+            píxeles y en negrita.</p>
+
+         <hr>
+         <!-- Limpiar la consola -->
+         <p class="text-muted fw-bold">Limpiar la consola</p>
+         <p class="lead">
+            El método <code>console.clear()</code> permite limpiar la consola. Esto es útil cuando queremos borrar todos
+            los mensajes anteriores para tener una vista más limpia.
+         </p>
+         <pre><code>console.clear();</code></pre>
+
+         <hr>
+         <!-- Agrupar mensajes -->
+         <p class="text-muted fw-bold">Agrupar mensajes</p>
+         <p class="lead">Existen varias formas de agrupar mensajes de consola. Veamos algunos de ellos:</p>
+         <pre><code>console.group("Grupo de mensajes - Inicia un acordeón expandible con el texto indicado por parámetro.");</code></pre>
+         <p class="lead">Es posible agrupar varios mensajes de consola mediante <code>console.group()</code> y las
+            funciones de su
+            familia:</p>
+         <pre><code>console.groupCollapsed("Grupo de mensajes colapsado - Idem al anterior, pero colapsado (cerrado) por defecto.");</code></pre>
+         <p class="lead">También es posible cerrar un grupo de mensajes con <code>console.groupEnd</code>
+         </p>
+         <pre><code>console.groupEnd("Grupo de mensajes - Cierra el grupo de mensajes abierto anteriormente.");</code></pre>
+         <p class="lead">Un método que puede resultar muy interesante en algunas situaciones es
+            <code>console.table()</code>, ya que
+            nos permite crear una tabla con los datos a mostrar, algo que en ciertas situaciones con tipos de datos
+            <kbd>Object</kbd> o <kbd>Array</kbd>
+            muy extensos, es muy práctico:
+         </p>
+         <pre><code>console.table([{nombre: "Jairo", edad: 30}, {nombre: "María", edad: 25}]);</code></pre>
+         <p class="lead">Otro método es <code>console.assert()</code>Javascript incorpora un método de consola para
+            realizar asertos, es decir, un console.log() especial que se realiza junto a una condición. El mecanismo de
+            utilizar este método es que podemos indicar ciertas condiciones como puntos de control, para asegurarnos que
+            todo ha salido correctamente.</p>
+         <pre><code>console.assert(2 > 3, "Esto es un error, ya que la condición es falsa.");</code></pre>
+         <p class="lead">En este ejemplo, el mensaje de error se mostrará en la consola porque la condición
+            <code>2 > 3</code> es falsa. Si la condición fuera verdadera, no se mostraría ningún mensaje. Ten en cuenta
+            que el aserto sólo sirve para avisar por consola con un mensaje, de forma muy sútil. No detiene la ejecución
+            del programa, ni nada parecido.
+         </p>
+
+         <p class="lead">Otro método es <code>console.dir()</code>. Este método nos permite mostrar la representación de
+            un objeto en la consola, lo que es muy útil para inspeccionar sus propiedades y métodos.</p>
+         <pre><code>console.dir(document.getElementById("miElemento"));</code></pre>
+         <p class="lead">En este ejemplo, se mostrará la representación del elemento con el id "miElemento" en la
+            consola, permitiéndonos inspeccionar sus propiedades y métodos de manera más detallada.</p>
+
+
+         <hr>
+         <!-- Crear benchmarks rápidos -->
+         <p class="text-muted fw-bold">Crear benchmarks rápidos</p>
+         <p class="lead">Es posible que necesitemos hacer tests de rendimiento, para comprobar cuanto se tarda en
+            realizar alguna acción, o comparaciones para decidirnos por mejores formas de hacer nuestro código. Los
+            navegadores tienen una serie de métodos interesantes para ello, divididos en tres grupos:</p>
+
+         <ol>
+            <li>Contador</li>
+            <li>Benhmark de tiempo</li>
+            <li>Benchmark de rendimiento</li>
+         </ol>
+
+
+         <hr>
+         <!-- Contadores -->
+         <p class="text-muted fw-bold">1.- Contadores</p>
+         <p class="lead">Con los contadores de consola, puedes crear contadores rápidamente que sólo necesitas utilizar
+            en tareas de depuración, de forma mucho más rápida que hacerlo con código Javascript.</p>
+         <p class="text-muted">Tiene tres métodos principales:
+
+         <ul>
+            <li><code>console.count()</code></li>
+            <li><code>console.countReset()</code></li>
+            <li><code>console.countEnd()</code></li>
+         </ul>
+         </p>
+         <p class="text muted">Ejemplo sencillo:</p>
+         <pre><code>console.count("Contador de ejemplo");</code></pre>
+         <p class="text-muted">Cada vez que se ejecute esta línea, el contador con el nombre "Contador de ejemplo"
+            aumentará en uno y se mostrará su valor actual en la consola.</p>
+         <pre><code>console.countReset("Contador de ejemplo");</code></pre>
+         <p class="text-muted">Este método restablece el contador con el nombre "Contador de ejemplo" a cero.</p>
+         <pre><code>console.countEnd("Contador de ejemplo");</code></pre>
+         <p class="text-muted">Este método detiene el contador con el nombre "Contador de ejemplo" y muestra su valor
+            final en la consola.</p>
+
+         <!-- Benchmark de tiempo -->
+         <p class="text-muted fw-bold">2.- Benchmark de tiempo </p>
+         <p class="lead">Con los métodos de benchmark de tiempo, puedes medir el tiempo que tarda en ejecutarse un
+            bloque de código o una función específica. Esto es útil para identificar cuellos de botella y optimizar
+            el rendimiento de tu código.</p>
+         <p class="text-muted">Tiene tres métodos principales:
+         <ul>
+            <li><code>console.time()</code></li>
+            <li><code>console.timeLog()</code></li>
+            <li><code>console.timeEnd()</code></li>
+         </ul>
+         <p class="text muted">Ejemplo sencillo:</p>
+         <pre><code>console.time("Tiempo de ejemplo");</code></pre>
+         <p class="text-muted">Este método inicia un temporizador con el nombre "Tiempo de ejemplo". Puedes ejecutar
+            este método varias veces para iniciar varios temporizadores con diferentes nombres.</p>
+         <pre><code>console.timeLog("Tiempo de ejemplo");</code></pre>
+         <p class="text-muted">Este método muestra el tiempo transcurrido desde que se inició el temporizador con el
+            nombre "Tiempo de ejemplo".</p>
+         <pre><code>console.timeEnd("Tiempo de ejemplo");</code></pre>
+         <p class="text-muted">Este método detiene el temporizador con el nombre "Tiempo de ejemplo" y muestra su valor
+            final en la consola.</p>
+
+         <!-- Benchmark de rendimiento -->
+         <p class="text-muted fw-bold">2.- Benchmark de rendimiento</p>
+         <p class="lead">Con los métodos de benchmark de rendimiento, puedes medir el rendimiento de tu código en
+            términos de uso de CPU, memoria y otros recursos del sistema. Esto es útil para identificar problemas de
+            rendimiento y optimizar tu código.</p>
+         <p class="text-muted">Tiene tres métodos principales:
+         <ul>
+            <li><code>console.profile()</code></li>
+            <li><code>console.profileEnd()</code></li>
+            <li><code>console.timeStamp()</code></li>
+         </ul>
+         <p class="text muted">Ejemplo sencillo:</p>
+         <pre><code>console.profile("Perfil de ejemplo");</code></pre>
+         <p class="text-muted">Este método inicia un perfil de rendimiento con el nombre "Perfil de ejemplo". Puedes
+            ejecutar este método varias veces para iniciar varios perfiles con diferentes nombres.</p>
+         <pre><code>console.profileEnd("Perfil de ejemplo");</code></pre>
+         <p class="text-muted">Este método detiene el perfil de rendimiento con el nombre "Perfil de ejemplo" y muestra
+            su valor final en la consola.</p>
+         <pre><code>console.timeStamp("Marca de tiempo de ejemplo");</code></pre>
+         <p class="text-muted">Este método agrega una marca de tiempo con el nombre "Marca de tiempo de ejemplo" a la
+            consola. Esto es útil para marcar eventos específicos en tu código y medir el tiempo transcurrido entre
+            ellos.</p>
+      </div>
+   </div>
+
+   <div class="d-flex justify-content-center m-4">
+      <a href="../index.html" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Ir a la página principal</a>
+   </div>
+
+   <script src="../assets/js/consola.js"></script>
+</body>
+
+</html>
